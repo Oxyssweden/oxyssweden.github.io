@@ -35,8 +35,7 @@ plugins:
   - github_pages
   - jekyll-feed
   - jekyll-autoprefixer
-  - image_optim
-  - image_optim_pack
+  - jekyll-minifier
 
 autoprefixer:
   only_production: false
@@ -48,7 +47,6 @@ autoprefixer:
 sass:
   sass_dir: _sass
   style: compact
-
 
 # Exclude from processing.
 # The following items will not be processed, by default.
