@@ -32,10 +32,23 @@ github_username:  jekyll
 # Build settings
 theme: minima
 plugins:
+  - github_pages
   - jekyll-feed
+  - jekyll-autoprefixer
+  - image_optim
+  - image_optim_pack
+
+autoprefixer:
+  only_production: false
+  browsers:
+    - last 2 versions
+    - not dead
+    - ie 10
 
 sass:
+  sass_dir: _sass
   style: compact
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
