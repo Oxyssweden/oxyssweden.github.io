@@ -1,5 +1,7 @@
 # oxyssite
 
+Jekyll docs: https://jekyllrb.com/docs/
+
 Ensure that ruby is installed
 
 First, make sure that bundler is installed. 
@@ -10,4 +12,4 @@ then, in the /docs directory run:
 
 `bundle install`
 
-To serve the applications locally run `bundle exec jekyll serve`. Add `--watch` flag to get continuous updates.
+To serve the applications locally run `bundle exec jekyll serve`. Add `--w -l` to get watch and live reload.
