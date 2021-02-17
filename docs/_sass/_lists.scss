@@ -1,0 +1,63 @@
+ul,
+ol {
+    position: relative;
+    list-style: none;
+    padding-left: 2rem;
+    @include bp('sm') {
+        padding-left: 7rem;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0.75rem;
+        bottom: 0.25rem;
+        width: 100vw;
+        background-image: url('/assets/images/raster.svg');
+        border-right: 0.75rem solid $coke;
+        filter: brightness(0.05) sepia(1) hue-rotate(315deg) saturate(10);
+        right: calc(100% - 1rem);
+        @include bp('sm') {
+            right: calc(100% - 4.5rem);
+        }
+    }
+
+    li {
+        position: relative;
+        font-weight: bold;
+
+        &:before {
+            content: "+";
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+    }
+}
+
+ul {
+    li {
+        &:before {
+            content: "+";
+            font-size: 1.5rem;
+        }
+    }
+}
+
+ol {
+    counter-reset: ol-counter;
+
+    li {
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &:before {
+            content: "1";
+            counter-increment: ol-counter;
+            content: counter(ol-counter);
+        }
+    }
+}

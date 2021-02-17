@@ -1,5 +1,14 @@
 .article {
     @include fluid( margin-bottom, 4rem, 8rem, $xs, $xl);
+
+    img {
+        margin: 0.5rem -1.5rem 1.25rem;
+        width: 100vw;
+        @include bp('sm') {
+            width: 100%;
+            margin: 0.5rem 0 1.25rem;
+        }
+    }
 }
 
 .lead {
@@ -18,6 +27,7 @@
     }
 
     img {
+        margin: 0;
         width: 100%;
         @include bp('sm') {
             width: calc(50vw - 1rem);
@@ -29,6 +39,12 @@
     @include bp('sm') {
         float: left;
         margin: 0.5rem 2rem 0.5rem 0;
+    }
+
+    img {
+        @include bp('sm') {
+            float: right;
+        }
     }
 }
 

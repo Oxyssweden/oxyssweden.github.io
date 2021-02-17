@@ -1,0 +1,23 @@
+blockquote {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    margin-top: 4rem;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -2rem;
+        bottom: 25%;
+        right: calc(100% - 10rem);
+        width: 50%;
+        background-image: url('/assets/images/raster.svg');
+        filter: brightness(0.72) sepia(0.8) hue-rotate(314deg) saturate(11);
+        z-index: -1;
+    }
+
+    figcaption {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+}
