@@ -16,6 +16,11 @@
         background: transparent;
       }
 
+    // Used by regular ul
+      &:before {
+          display: none;
+      }
+
     .site-nav__item {
         display: inline-block;
         width: 33.33%;
@@ -37,6 +42,11 @@
             @include bp('sm'){
                 margin-left: 1rem
             }
+        }
+
+        // Used by regular li
+        &:before {
+            display: none;
         }
 
 
@@ -86,8 +96,6 @@
         }
     }
 }
-
-
 
 .frontpage {
     .site-nav__item {
