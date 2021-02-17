@@ -2,11 +2,6 @@
 // It lies in <source>/_sass, just waiting to be imported.
 // It does not contain the YAML front matter and has no corresponding output file in the built site.
 
-// H1
-@import url("https://use.typekit.net/teg1xjt.css");
-// Everything else
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
-
 body {
   background-color: $vanilla;
   font-family: 'Titillium Web', sans-serif;
