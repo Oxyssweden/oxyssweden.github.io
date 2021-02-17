@@ -1,0 +1,40 @@
+.article {
+    @include fluid( margin-bottom, 4rem, 8rem, $xs, $xl);
+}
+
+.lead {
+    @include fluid( font-size, 1.5rem, 2rem, $xs, $xl);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.align-left,
+.align-right {
+    width: 100vw;
+    margin-left: -1.5rem;
+    @include bp('sm') {
+        float: right;
+        width: calc(50% - 1rem);
+    }
+
+    img {
+        width: 100%;
+        @include bp('sm') {
+            width: calc(50vw - 1rem);
+        }
+    }
+}
+
+.align-left {
+    @include bp('sm') {
+        float: left;
+        margin: 0.5rem 2rem 0.5rem 0;
+    }
+}
+
+.align-right {
+    @include bp('sm') {
+        float: right;
+        margin: 0.5rem 0 0.5rem 2rem;
+    }
+}

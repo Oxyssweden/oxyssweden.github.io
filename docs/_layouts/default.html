@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <title>Sass Example Site</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-</head>
-<body>
-
+{%- include head.html -%}
 {%- include header.html -%}
-
-<section class="content">
-    {{ content }}
-</section>
-
+{{ content }}
 {%- include footer.html -%}
-
-</body>
-</html>

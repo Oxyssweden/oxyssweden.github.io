@@ -1,0 +1,52 @@
+@mixin fluid($property, $min, $max, $min-vw: 768px, $max-vw: 1600px) {
+    $min-no-unit: strip-units($min);
+    $max-no-unit: strip-units($max);
+    $min-vw-no-unit: strip-units($min-vw);
+    $max-vw-no-unit: strip-units($max-vw);
+  
+    @if getUnit($min) == "rem" or getUnit($min) == "em" {
+      $min-no-unit: strip-units($min) * 16;
+      $max-no-unit: strip-units($max) * 16;
+    }
+    $responsive: calc(
+      #{$min-no-unit}px + (#{$max-no-unit} - #{$min-no-unit}) *
+        ((100vw - #{$min-vw}) / (#{$max-vw-no-unit} - #{$min-vw-no-unit}))
+    );
+  
+    $average: $min + $max / 2;
+    #{$property}: $average;
+    #{$property}: $responsive;
+  
+    @media screen and (max-width: #{$min-vw}) {
+      #{$property}: $min;
+    }
+    @media screen and (min-width: #{$max-vw}) {
+      #{$property}: $max;
+    }
+  }
+  @function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @function getUnit($value) {
+    @return str-slice($value * 0 + "", 2, -1);
+  }
+
+
+  /// Mixin to manage responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin bp($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+  }

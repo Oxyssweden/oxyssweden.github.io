@@ -1,0 +1,111 @@
+
+
+.site-nav {
+    list-style: none;
+    float: right;
+    background: $gum;
+    width: 100%;
+    height: 2.75rem;
+    padding: 0;
+    margin-top: 2.75rem;
+    @include bp('sm'){
+        height: auto;
+        width: auto;
+        margin-right: 4rem;
+        margin-top: 3.75rem;
+        background: transparent;
+      }
+
+    .site-nav__item {
+        display: inline-block;
+        width: 33.33%;
+        text-align: center;
+        float: left;
+        @include bp('sm'){
+            width: auto;
+            margin-right: 1.5rem;
+        }
+        @include bp('md'){
+            margin-right: 2rem;
+        }
+        @include bp('lg'){
+            margin-right: 3rem;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            @include bp('sm'){
+                margin-left: 1rem
+            }
+        }
+
+
+        a {
+            color: $coke;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 2.75rem;
+            height: 100%;
+            width: 100%;
+            display: block;
+            font-size: 0.875rem;
+            letter-spacing: 0.05rem;
+            @include bp('sm'){
+                line-height: 1;
+                font-size: 1.125rem;
+            }
+        }
+
+        &.contact-item {
+            
+            a {
+                @include bp('sm'){
+                    position: relative;
+                    color: $vanilla;
+                }
+
+                span {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &:after {
+                    @include bp('sm'){
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        height: calc(100% + 1.5rem);
+                        width: calc(100% + 2rem);
+                        transform: translate(-50%, -50%);
+                        background: $coke;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.frontpage {
+    .site-nav__item {
+        a {
+            color: $coke;
+            @include bp('sm'){
+                color: $gum;
+            }
+        }
+
+        &.contact-item {
+            a {
+                color: $coke;
+
+                &:before {
+                    background: $gum;
+                }
+            }    
+        }    
+    } 
+}

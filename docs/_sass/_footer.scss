@@ -1,0 +1,67 @@
+.site-footer {
+    position: relative;
+    background: $coke;
+    color: $gum;
+    padding: 0 0 3rem;
+    @include bp('sm') {
+        padding: 4rem 0;
+    }
+    @include bp('md') {
+        padding: 6rem 0;
+    }
+    @include bp('lg') {
+        padding: 8rem 0;
+    }
+    
+
+    p {
+        color: $vanilla;
+    }
+
+    a {
+        color: $gum;
+    }
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    height: 24rem;
+    top: 0;
+    margin-bottom: 3rem;
+    @include bp('sm') {
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        margin-bottom: 0;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fd6145;
+        mix-blend-mode: color;
+        pointer-events: none;
+        filter: brightness(0.5);
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+
+        
+    }
+
+    .button {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+    
+}

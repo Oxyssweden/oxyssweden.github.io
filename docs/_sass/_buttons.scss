@@ -1,0 +1,30 @@
+.button {
+    display: inline-block;
+    position: relative;
+    background-color: $coke;
+    color: $vanilla;
+    border: none;
+    padding: 0.75rem 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1875rem;
+    text-align: center;
+    line-height: 1.5;
+    width: 100%;
+    box-shadow: 1.5rem 2rem 3rem rgba($coke, 0.16);
+    @include bp('xs'){
+        width: auto;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.75rem;
+        height: 100%;
+        background-image: url('/assets/images/raster.svg');
+        background-color: transparent;
+    }
+}

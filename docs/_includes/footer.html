@@ -1,37 +1,33 @@
-<footer class="site-footer h-card">
-    <data class="u-url" href="{{ "/" | relative_url }}"></data>
+<footer class="site-footer">
 
-    <div class="wrapper">
-
-        <div class="footer-col-wrapper">
-            <div class="footer-col">
-                <p class="feed-subscribe">
-                    <a href="{{ 'feed.xml' | relative_url }}">
-                        <svg class="svg-icon orange">
-                            <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-                        </svg><span>Subscribe</span>
-                    </a>
-                </p>
-                {%- if site.author %}
-                <ul class="contact-list">
-                    {% if site.author.name -%}
-                    <li class="p-name">{{ site.author.name | escape }}</li>
-                    {% endif -%}
-                    {% if site.author.email -%}
-                    <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-                    {%- endif %}
-                </ul>
-                {%- endif %}
-            </div>
-            <div class="footer-col">
-                <p>{{ site.description | escape }}</p>
-            </div>
-        </div>
-
-        <div class="social-links">
-            {%- include social.html -%}
-        </div>
-
+    <div class="map">
+        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=18.05081222963054%2C59.33098535149374%2C18.08557365846355%2C59.34144723983672&amp;layer=transportmap&amp;marker=59.33621669840515%2C18.06819294404704"></iframe><a class="button" href="https://www.openstreetmap.org/?mlat=59.33622&amp;mlon=18.06819#map=17/59.33622/18.06819&amp;layers=T" title="Extern länk till större karta">Större karta</a>
     </div>
 
+    <div class="container">
+        <div class="col-sm-7-11">
+            <h1>Kontaktuppgifter</h1>
+
+            <p>
+                Vi som jobbar på Oxys är sociala varelser. Var inte rädd för att slå oss en pling eller skicka oss ett mejl. Vi svarar alltid inom kort.
+                <br>
+                Ser fram emot att höra från dig!
+            </p>
+
+            <p>
+                Kungsgatan 8, 11143 Stockholm
+            </p>
+            
+            <a href="mailto:kontakt@oxys.se" title="Skicka oss ett meddelande till vår e-post">kotakt@oxys.se</a>
+            <br>
+            <a href="tel:+46868428300" title="Länk till vårt telefonnummer">+46-8-684 283 00</a>
+        </div>
+    </div>
+
+    
 </footer>
+
+<script src="{{ 'assets/js/lottie.js' | relative_url }}"></script>
+<script src="{{ 'assets/js/oxys.js' | relative_url }}"></script>
+</body>
+</html>

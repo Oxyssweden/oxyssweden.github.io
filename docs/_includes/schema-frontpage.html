@@ -1,0 +1,17 @@
+{
+    "@type":"{{ layout.type }}",
+    "@id":"{{ page.url }}#{{ layout.type }}",
+    "url":"{{ page.url }}",
+    "name":"{{ page.title }}",
+    "isPartOf":{
+        "@id":"{{ site.url }}#website"
+    },
+    "image": "{{ page.og-image }}",
+    "datePublished":"2019-06-15T09:22:32+00:00",
+    "dateModified":"2021-01-28T19:26:14+00:00",
+    "description":"{{ page.description }}",
+    "author": {
+        "@type": "{{ page.authorType }}",
+        "name": "{{ page.author }}"
+    }
+}

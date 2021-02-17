@@ -1,0 +1,57 @@
+#ballMaking {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1rem;
+        height: 1rem;
+        background: $vanilla;
+    }
+
+    svg {
+        float: left;
+        
+    }
+}
+
+#designBall {
+    max-width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    @include bp('lg') {
+        max-width: 70%;
+    }
+}
+
+
+.projectleader-illustration,
+.ballandarrow-illustration {
+    text-align: center;
+
+    svg {
+        height: auto;
+        width: 80%;
+        margin-bottom: 3rem;
+
+        @include bp('xs') {
+            width: 60%;
+        }
+        @include bp('sm') {
+            margin-bottom: 0;
+            width: 100%;
+        }
+        @include bp('md') {
+            width: 80%;
+        }
+        @include bp('xl') {
+            width: 70%;
+        }
+    }
+}

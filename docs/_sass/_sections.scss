@@ -1,0 +1,176 @@
+.section {
+    position: relative;
+    @include fluid( padding-bottom, 12rem, 24rem, $xs, $xl);
+    @include fluid( padding-top, 6rem, 12rem, $xs, $xl);
+
+    h1 {
+        position: relative;
+        @include fluid( margin-bottom, 1rem, 2rem, $xs, $xl);
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100vw;
+            right: calc(100% + 1rem);
+            height: calc(100% - 1.5rem);
+            top: 0.5rem;
+            background-image: url('/assets/images/raster.svg');
+        }
+    }
+
+    p {
+        @include fluid( margin-bottom, 1.5rem, 2.5rem, $xs, $xl);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    [class^="col"] + [class^="col"] {
+        h1 {
+            &:before {
+                right: auto;
+                left: calc(100% + 1rem);
+            }
+        }
+    }
+
+    .section-content {
+
+    }
+
+    &--intro {
+        position: relative;
+        padding-bottom: 0;
+        @include fluid( padding-top, 2rem, 4rem, $xs, $xl);
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0%;
+            pointer-events: none;
+            opacity: 0.3;
+            @include bp('xs') {
+                background-position: 260% bottom;
+            }
+            @include bp('sm') {
+                background-position: 200% bottom;
+                background-image: url('/assets/images/doggie.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-blend-mode: exclusion;
+                background-position: center bottom;
+            }
+            @include bp('md') {
+                background-position: 130% bottom;
+            }
+            @include bp('lg') {
+                bottom: 7.5%;
+            }
+        }
+    
+        .section-content {
+            position: relative;
+            margin-bottom: 6rem;
+
+            h1 {
+                @include fluid( font-size, 4rem, 10rem, $xs, $xl);
+                @include fluid( margin-bottom, 0.75rem, 1rem, $xs, $xl);
+                margin-top: 0;
+                letter-spacing: 0.1rem;
+
+                &:before {
+                    display: none;
+                }
+            }
+            
+            p {
+                color: $vanilla;
+                @include fluid( font-size, 1.25rem, 1.5rem, $xs, $xl);
+                @include bp('md') {
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+    &--strategy {
+        @include fluid( padding-top, 4rem, 16rem, $xs, $xl);
+        @include fluid( padding-bottom, 12rem, 36rem, $xs, $xl);
+        padding-bottom: calc(22% + 4rem);
+        @include bp('md') {
+            padding-bottom: calc(22% + 10rem);
+        }
+    }
+
+    &--design {
+        //@include fluid( padding-top, 4rem, 4rem, $xs, $xl);
+        background-image: url('/assets/images/bubbles.svg');
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-bottom-right-radius: 10rem;
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 0;
+            padding-bottom: 22%;
+            background-image: url('/assets/images/bubbles.svg');
+            background-position: top center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            left: 0;
+            top: 0;
+            margin-top: -22%;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: $coke;
+            z-index: -1;
+        }
+
+        #designBall {
+            
+        }
+    }
+
+    &--tech {
+
+        p {
+            color: $gum;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include fluid( height, 4rem, 20rem, $xs, $xl);
+            background-image: url('/assets/images/circuits.svg');
+            background-size: auto 150%;
+            background-repeat: repeat;
+        }
+    }
+
+    &--seo {
+        h1 {
+            &:before {
+                filter: brightness(0.05) sepia(1) hue-rotate(315deg) saturate(10);
+            }
+        }
+    }
+}
+
+
+

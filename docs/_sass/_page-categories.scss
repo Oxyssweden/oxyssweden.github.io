@@ -1,0 +1,50 @@
+.page-categories {
+    display: block;
+    position: relative;
+    counter-reset: category-counter;
+    @include fluid( padding-bottom, 3rem, 6rem, $xs, $xl);
+    @include bp('md') {
+        display: grid;
+    }
+
+    //bryter grid en på varje rad på mobil 
+    &__item {
+        position: relative;
+        border-left: 0.5rem solid rgba($gum, 20%);
+        padding-left: 1.5rem;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            color: rgba($gum, 20%);
+            font-weight: bold;
+            counter-increment: category-counter;
+            content: counter(category-counter);
+            left: -1.5rem;
+            font-size: 1.25rem;
+            @include bp('xl') {
+                content: "0" counter(category-counter);
+                left: -3.5rem;
+                top: -0.3rem;
+                font-size: 2rem;
+            }
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 0.25rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 1.125rem;
+            color: $vanilla;
+            @include bp('xl') {
+                width: 90%;
+            }
+        }
+    }
+}

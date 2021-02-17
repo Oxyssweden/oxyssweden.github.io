@@ -3,7 +3,24 @@
 # only Main files contain this front matter, not partials.
 ---
 
+@import "settings";
+@import "reset";
+@import "breakpoints";
+@import "colors";
+@import "mixins";
+@import "backgrounds";
+@import "container";
 @import "typography";
+@import "site-nav";
+@import "footer";
+@import "top-image";
+@import "pages";
+@import "article";
+@import "buttons";
+@import "graphics";
+@import "header";
+@import "sections";
+@import "page-categories";
 
 .content {
   width: 45rem;

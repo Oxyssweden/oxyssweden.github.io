@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6" height="3" viewBox="0 0 6 3" aria-labelledby="squareLogoTitleId squareLogoDescId" role="img">
+    <title id="squareLogoTitleId">Oxys logotyp</title>
+    <desc id="squareLogoDescId">Bild på oxys ståtliga logotyp</desc>
+    <rect width="1" height="1" transform="translate(4 1)" fill="#fff"/>
+    <rect width="1" height="1" transform="translate(2)" fill="#fff"/>
+    <rect width="1" height="1" transform="translate(0 1)" fill="#fff"/>
+</svg>

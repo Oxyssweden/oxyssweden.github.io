@@ -1,0 +1,24 @@
+.frontpage {
+
+    .site-header {
+        background-color: $coke;
+    }
+
+    .logo-oxys {
+        svg path {
+            fill: $gum;
+        }
+    }
+
+    .site-nav__item {
+        &.contact-item {
+            a {
+                color: $coke;
+    
+                &:after {
+                    background: $gum;
+                }
+            }
+        }
+    }
+}

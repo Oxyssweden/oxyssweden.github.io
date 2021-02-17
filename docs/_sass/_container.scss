@@ -1,0 +1,154 @@
+$columns: 12;
+
+.container {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: 2, 1fr;
+    max-width: 1672px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: row dense;
+    @include bp('sm'){
+      padding: 0 2rem;
+    }
+    @include bp('md'){
+      padding: 0 3rem;
+    }
+    @include bp('lg'){
+      padding: 0 4rem;
+    }
+    @include fluid( column-gap, 0.75rem, 1.5rem, $xs, $xl);
+  }
+
+  [class^="col-"] {
+    grid-column: 1 / 13;
+  }
+
+@each $name, $width in $breakpoints {
+
+  @for $i from 1 through $columns {
+    
+
+    @for $k from 1 through $columns {
+
+        $last: $k + 1;
+
+        @if $i == $k {
+            
+            @include bp(#{$name}){
+                .col-#{$name}-#{$i} {
+                    grid-column: #{$i} / #{$last};
+                }
+            }
+        }
+        @else if ($i < $k) {
+
+            @include bp(#{$name}){
+                .col-#{$name}-#{$i}-#{$k} {
+                    grid-column: #{$i} / #{$last};
+                }
+            }
+            
+        }       
+
+    }
+
+  }
+
+}
+
+.first-xxs {
+  @include bp('xxs'){
+    grid-row-start: 1;
+  }  
+}
+.first-xs {
+  @include bp('xs'){
+    grid-row-start: 1;
+  }  
+}
+.first-sm {
+  @include bp('sm'){
+    grid-row-start: 1;
+  }  
+}
+.first-md {
+  @include bp('md'){
+    grid-row-start: 1;
+  }  
+}
+.first-lg {
+  @include bp('lg'){
+    grid-row-start: 1;
+  }  
+}
+.first-xl {
+  @include bp('xl'){
+    grid-row-start: 1;
+  }  
+}
+
+.last-xxs {
+  @include bp('xxs'){
+    grid-row-start: 12;
+  }  
+}
+.last-xs {
+  @include bp('xs'){
+    grid-row-start: 12;
+  }  
+}
+.last-sm {
+  @include bp('sm'){
+    grid-row-start: 12;
+  }  
+}
+.last-md {
+  @include bp('md'){
+    grid-row-start: 12;
+  }  
+}
+.last-lg {
+  @include bp('lg'){
+    grid-row-start: 12;
+  }  
+}
+.last-xl {
+  @include bp('xl'){
+    grid-row-start: 12;
+  }  
+}
+
+.order-default-xxs {
+  @include bp('xxs'){
+    grid-row-start: auto;
+  }  
+}
+.order-default-xs {
+  @include bp('xs'){
+    grid-row-start: auto;
+  }  
+}
+.order-default-sm {
+  @include bp('sm'){
+    grid-row-start: auto;
+  }  
+}
+.order-default-md {
+  @include bp('md'){
+    grid-row-start: auto;
+  }  
+}
+.order-default-lg {
+  @include bp('lg'){
+    grid-row-start: auto;
+  }  
+}
+.order-default-xl {
+  @include bp('xl'){
+    grid-row-start: auto;
+  }  
+}

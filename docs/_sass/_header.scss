@@ -1,0 +1,80 @@
+.site-header {
+    background-color: $coke;
+    height: 5.5rem;
+    @include bp('sm') {
+        height: 10rem;
+        background-color: transparent;
+    }
+
+    a {
+        color: $gum;
+    }
+}
+
+.logo-oxys {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5rem;
+    @include bp('sm') {
+        position: absolute;
+        top: 2.5rem;
+        left: 3rem;
+        margin-top: 0rem;
+        transform: translateX(0);
+        padding-top: 0.5rem;
+    }
+    
+
+    &:hover {
+        &:before {
+            display: none;
+        }
+
+        svg {
+            path {
+                stroke: $gum;
+                stroke-width: 1px;
+                transition: all .3s;
+                stroke-dasharray: 20;
+                animation: dash 5s linear infinite;
+                fill: $coke;
+
+            }
+    
+        }
+
+    }
+
+    svg.logo {
+        @include bp('sm') {
+            display: none;
+        }
+
+        path {
+            fill: $gum;
+        }
+    }
+    svg.logo-square {
+        display: none;
+        @include bp('sm') {
+            display: block;
+        }
+    }
+}
+
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 60;
+    }
+    50% {
+      stroke-dashoffset: 100;
+      stroke-dasharray: 30;
+    }
+    100% {
+        stroke-dasharray: 60;
+        stroke-dashoffset: 0;
+    }
+  }
