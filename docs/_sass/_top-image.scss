@@ -1,6 +1,6 @@
 .top-image {
     position: relative;
-    height: 28rem;
+    @include fluid( height, 16rem, 28rem, $xs, $xl);
     @include fluid( padding-bottom, 20rem, 28rem, $xs, $xl);
     @include fluid( margin-bottom, 1.5rem, 4rem, $xs, $xl);
     
@@ -35,17 +35,19 @@
         overflow: hidden;
         height: 100%;
         width: 100%;
-    }
 
-    img {
-        position: absolute;
-        min-width: 100%;
-        width: auto;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        img {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin-left: 0;
+            object-fit: cover;
+        }
     }
-
 
     &--case {
         &:before {

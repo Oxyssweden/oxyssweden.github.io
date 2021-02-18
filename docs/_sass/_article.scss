@@ -19,17 +19,37 @@
 
 .align-left,
 .align-right {
+    position: relative;
     width: 100vw;
-    margin-left: -1.5rem;
+    margin: 0.5rem -1.5rem 1.25rem;
     @include bp('sm') {
+        margin: 0.5rem 0 1.25rem -1.5rem;
         float: right;
         width: calc(50% - 1rem);
     }
 
+    &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        top: 1rem;
+        right: -1rem;
+        z-index: -1;
+        @include bp('md') {
+            background-image: url('/assets/images/raster.svg');
+        filter: brightness(0.05) sepia(1) hue-rotate(315deg) saturate(10);
+        }
+        
+
+    }
+
     img {
-        margin: 0;
+        
         width: 100%;
+        margin: 0;
         @include bp('sm') {
+            float: left;
             width: calc(50vw - 1rem);
         }
     }
@@ -52,5 +72,10 @@
     @include bp('sm') {
         float: right;
         margin: 0.5rem 0 0.5rem 2rem;
+    }
+
+    &:before {
+        right: auto;
+        left: 1rem;
     }
 }

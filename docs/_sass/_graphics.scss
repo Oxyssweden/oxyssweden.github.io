@@ -3,6 +3,7 @@
     display: inline-block;
     width: 100%;
     height: auto;
+    z-index: 1;
 
     &:after {
         content: "";
@@ -25,6 +26,13 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: -4rem;
+    @include bp('xs') {
+        margin-bottom: -6rem;
+    }
+    @include bp('sm') {
+        margin-bottom: 0;
+    }
     @include bp('lg') {
         max-width: 70%;
     }
@@ -33,12 +41,14 @@
 
 .projectleader-illustration,
 .ballandarrow-illustration {
+    position: relative;
     text-align: center;
 
     svg {
         height: auto;
         width: 80%;
         margin-bottom: 3rem;
+        position: relative;
 
         @include bp('xs') {
             width: 60%;
@@ -52,6 +62,26 @@
         }
         @include bp('xl') {
             width: 70%;
+        }
+    }
+}
+
+.ballandarrow-illustration {
+    
+    svg {
+        @include bp('md') {
+            transform: translateZ(-0.5px) scale(1.5) translateX(-50%);
+            left: 50%;
+        }
+    }
+}
+
+.projectleader-illustration {
+
+    svg {
+        @include bp('md') {
+            transform: translateZ(-0.25px) scale(1.25) translateX(-50%);
+            left: 50%;
         }
     }
 }

@@ -1,7 +1,15 @@
 .site-header {
+    
+    z-index: 2;
     background-color: $coke;
     height: 5.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
     @include bp('sm') {
+        position: relative;
         height: 10rem;
         background-color: transparent;
     }
@@ -34,7 +42,7 @@
         svg {
             path {
                 stroke: $gum;
-                stroke-width: 1px;
+                stroke-width: 0.5px;
                 transition: all .3s;
                 stroke-dasharray: 20;
                 animation: dash 5s linear infinite;
@@ -66,14 +74,17 @@
 
 @keyframes dash {
     0% {
+        fill: $coke;
         stroke-dashoffset: 0;
         stroke-dasharray: 60;
     }
     50% {
+        fill: $coke;
       stroke-dashoffset: 100;
       stroke-dasharray: 30;
     }
     100% {
+        fill: $coke;
         stroke-dasharray: 60;
         stroke-dashoffset: 0;
     }

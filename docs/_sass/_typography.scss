@@ -21,6 +21,13 @@ h1 {
   margin-bottom: 1rem;
 }
 
+h2,
+h3,
+h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 p {
   margin-top: 0;
   @include fluid( margin-bottom, 1.25rem, 1.5rem, $lg, $xl);
@@ -39,7 +46,7 @@ a {
     width: 10%;
     padding-bottom: 10%;
     background-color: #ffffff;
-    mix-blend-mode: overlay;
+    mix-blend-mode: soft-light;
     opacity: 0;
     transition: all .2s ease-out;
     border-radius: 50%;

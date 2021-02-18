@@ -3,7 +3,7 @@ $columns: 12;
 .container {
     display: grid;
     grid-template-columns: repeat($columns, 1fr);
-    grid-template-rows: 2, 1fr;
+    //grid-template-rows: repeat(2, 1fr);
     max-width: 1672px;
     justify-content: center;
     margin: 0 auto;

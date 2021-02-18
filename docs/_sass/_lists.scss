@@ -3,6 +3,8 @@ ol {
     position: relative;
     list-style: none;
     padding-left: 2rem;
+    @include fluid( margin-top, 2rem, 4rem, $xs, $xl);
+    @include fluid( margin-bottom, 2rem, 4rem, $xs, $xl);
     @include bp('sm') {
         padding-left: 7rem;
     }
@@ -53,7 +55,7 @@ ol {
         &:last-child {
             margin-bottom: 0;
         }
-        
+
         &:before {
             content: "1";
             counter-increment: ol-counter;

@@ -7,6 +7,7 @@
         position: relative;
         @include fluid( margin-bottom, 1rem, 2rem, $xs, $xl);
 
+
         &:before {
             content: "";
             position: absolute;
@@ -44,29 +45,41 @@
         &:before {
             content: "";
             position: absolute;
-            top: 0;
+            top: 25%;
             left: 0;
             right: 0;
             bottom: 0%;
             pointer-events: none;
             opacity: 0.3;
-            @include bp('xs') {
-                background-position: 260% bottom;
-            }
+            background-position: 70% center;
+            background-size: cover;
+            background-image: url('/assets/images/doggie-bg.png');
+            background-repeat: no-repeat;
+            background-blend-mode: exclusion;
+            transform: translateZ(-1px) scale(2);
+
             @include bp('sm') {
-                background-position: 200% bottom;
-                background-image: url('/assets/images/doggie.png');
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-blend-mode: exclusion;
-                background-position: center bottom;
+                background-position: 85% center;
             }
             @include bp('md') {
-                background-position: 130% bottom;
+                top: 10rem;
+                background-position: center center;
             }
             @include bp('lg') {
                 bottom: 7.5%;
+
+                
             }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 66.6%;
+            background: linear-gradient(0deg, rgba(41,0,0,1) 0%, rgba(41,0,0,1) 50%, rgba(41,0,0,0) 100%);
         }
     
         .section-content {

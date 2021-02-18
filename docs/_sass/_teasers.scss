@@ -1,0 +1,27 @@
+.teaser {
+    
+
+    &--case {
+    
+
+
+    
+    }
+
+    &__content {
+        display: inline-block;
+
+        h2 {
+            @extend h1;
+            @include fluid( font-size, 2.5rem, 4rem, $xs, $xl);
+        }
+
+        @include bp('md') {
+            width: 40%;
+        }
+        @include bp('lg') {
+            width: 33%;
+        }
+
+    }
+}

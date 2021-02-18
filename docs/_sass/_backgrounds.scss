@@ -10,7 +10,7 @@
         @return brightness(0.5) sepia(1) hue-rotate(279deg) saturate(2.8);
     }
     @else if ($bg == $blueberry) {
-        @return brightness(0.118) sepia(1) hue-rotate(195deg) saturate(11);
+        @return brightness(0.118) sepia(1) hue-rotate(195deg) saturate(30);
     }
     @else if ($bg == $orange) {
         @return brightness(0.72) sepia(0.8) hue-rotate(314deg) saturate(11);
@@ -63,3 +63,4 @@
 .bg--blueberry {
     @include bg($blueberry, $gum, $gum);   
 }
+

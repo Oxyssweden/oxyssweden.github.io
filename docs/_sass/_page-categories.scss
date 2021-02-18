@@ -1,7 +1,10 @@
+
+
 .page-categories {
     display: block;
     position: relative;
     counter-reset: category-counter;
+    z-index: 1;
     @include fluid( padding-bottom, 3rem, 6rem, $xs, $xl);
     @include bp('md') {
         display: grid;

@@ -8,6 +8,17 @@ body {
     width: 100vw;
 }
 
+.page-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    padding-top: 5.5rem;
+    @include bp('sm') {
+        padding-top: 0;
+    }
+}
+
 img {
     width: 100%;
     height: auto;
