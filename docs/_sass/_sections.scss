@@ -1,7 +1,16 @@
 .section {
     position: relative;
     @include fluid( padding-bottom, 12rem, 24rem, $xs, $xl);
-    @include fluid( padding-top, 6rem, 12rem, $xs, $xl);
+    padding-top: 2rem;
+    @include bp('sm') {
+        padding-top: 10rem;
+    }
+    @include bp('lg') {
+        padding-top: 12rem;
+    }
+    @include bp('xl') {
+        padding-top: 14rem;
+    }
 
     h1 {
         position: relative;
@@ -40,7 +49,6 @@
     &--intro {
         position: relative;
         padding-bottom: 0;
-        @include fluid( padding-top, 2rem, 4rem, $xs, $xl);
 
         &:before {
             content: "";
@@ -57,6 +65,8 @@
             background-repeat: no-repeat;
             background-blend-mode: exclusion;
             transform: translateZ(-1px) scale(2);
+            background-color: $coke;
+            
 
             @include bp('sm') {
                 background-position: 85% center;
@@ -66,6 +76,7 @@
                 background-position: center center;
             }
             @include bp('lg') {
+                top: 5%;
                 bottom: 7.5%;
 
                 
@@ -89,7 +100,6 @@
             h1 {
                 @include fluid( font-size, 4rem, 10rem, $xs, $xl);
                 @include fluid( margin-bottom, 0.75rem, 1rem, $xs, $xl);
-                margin-top: 0;
                 letter-spacing: 0.1rem;
 
                 &:before {

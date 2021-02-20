@@ -3,13 +3,13 @@
     z-index: 2;
     background-color: $coke;
     height: 5.5rem;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     left: 0;
     right: 0;
     @include bp('sm') {
-        position: relative;
+        position: absolute;
         height: 10rem;
         background-color: transparent;
     }
