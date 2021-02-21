@@ -2,13 +2,31 @@
     
 
     &--case {
-    
+
+        .teaser-image {
+            img {
+                width: 100vw;
+                @include bp('sm') {
+                    width: 50vw;
+                }
+            }
+        }
+
+        &:nth-of-type(odd) {
+            .teaser-image {
+                img {
+                    @include bp('sm') {
+                        float: right;
+                    }
+                }
+            }
+        }
 
 
     
     }
 
-    &__content {
+    &-content {
         display: inline-block;
 
         h2 {
@@ -16,12 +34,7 @@
             @include fluid( font-size, 2.5rem, 4rem, $xs, $xl);
         }
 
-        @include bp('md') {
-            width: 40%;
-        }
-        @include bp('lg') {
-            width: 33%;
-        }
+ 
 
     }
 }

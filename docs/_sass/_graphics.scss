@@ -42,6 +42,7 @@
 .projectleader-illustration,
 .ballandarrow-illustration {
     position: relative;
+    z-index: 1;
     text-align: center;
 
     svg {
@@ -66,17 +67,10 @@
     }
 }
 
-.ballandarrow-illustration {
-    
-    svg {
-        @include bp('md') {
-            transform: translateZ(-0.5px) scale(1.5) translateX(-50%);
-            left: 50%;
-        }
-    }
-}
-
+.ballandarrow-illustration,
 .projectleader-illustration {
+    position: absolute;
+    z-index: 1;
 
     svg {
         @include bp('md') {
