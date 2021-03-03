@@ -63,9 +63,14 @@
             background-position: 70% center;
             background-size: cover;
             background-image: url('/assets/images/doggie-bg.png');
+            
             background-repeat: no-repeat;
             background-blend-mode: exclusion;
-            transform: translateZ(-1px) scale(2);
+            transform: translateZ(-3px) scale(4);
+            // Safari, the new IE :(
+            @media not all and (min-resolution:.001dpcm) { 
+                transform: none;
+            }
             transform-origin: 100%;
             -webkit-transform-origin-x: 100%;
             background-color: $coke;
@@ -121,18 +126,15 @@
         }
     }
 
-    &--strategy {
-        @include fluid( padding-top, 4rem, 16rem, $xs, $xl);
-        @include fluid( padding-bottom, 12rem, 36rem, $xs, $xl);
-        padding-bottom: calc(22% + 4rem);
-        @include bp('md') {
-            padding-bottom: calc(22% + 10rem);
-        }
+    &--design {
+        @include fluid( padding-top, 2rem, 12rem, $xs, $xl);
+        @include fluid( padding-bottom, 6rem, 16rem, $xs, $xl);
     }
 
     &--support {
         border-bottom-right-radius: 10rem;
         @include fluid( margin-top, 0, 24rem, $xxs, $xl);
+        @include fluid( padding-bottom, 12rem, 16rem, $xs, $xl);
         padding-top: 4rem;
 
 
@@ -171,9 +173,10 @@
 
         img {
             display: block;
-            margin: 0 auto 2rem;
+            margin: 0 auto 4rem;
             width: 70%;
             @include bp('md') {
+                margin-bottom: 0;
                 width: 100%;
             }
         }
@@ -192,6 +195,9 @@
     }
 
     &--seo {
+        background-color: $vanilla;
+        @include fluid( padding-bottom, 12rem, 16rem, $xs, $xl);
+
         h1 {
             &:before {
                 filter: brightness(0.05) sepia(1) hue-rotate(315deg) saturate(10);
@@ -200,6 +206,7 @@
     }
 
     &--cases {
+        @include fluid( padding-bottom, 8rem, 12rem, $xs, $xl);
 
         .section-content {
             @include fluid( margin-bottom, 2rem, 6rem, $xs, $xl);

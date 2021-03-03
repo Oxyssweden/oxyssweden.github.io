@@ -1,12 +1,16 @@
 .fadeup {
-    transform: translateY(20%);
+    transform: translateY(30%);
     opacity: 0;
     transition-property: transform, opacity;
-    transition-duration: .3s;
+    transition-duration: .5s;
     transition-timing-function: ease-out;
 }
 
 .in-view {
     transform: none;
     opacity: 1;
+}
+
+.out-view {
+    opacity: 0;
 }

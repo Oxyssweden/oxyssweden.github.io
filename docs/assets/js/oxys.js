@@ -89,18 +89,39 @@ if(anchorTech) {
 document.querySelectorAll('.fadeup').forEach((i) => {
   if (i) {
       const observer = new IntersectionObserver((entries) => {
-          observerCallback(entries, observer, i)
+          observerCallbackFadeUp(entries, observer, i)
       },
       {threshold: 0.3});    
       observer.observe(i);
   }
 });
 
-const observerCallback = (entries, observer, header) => {
+const observerCallbackFadeUp = (entries, observer, header) => {
   entries.forEach((entry, i) => {
        if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
        }
+  });
+};
+
+// FADE OUT
+document.querySelectorAll('.fadeout').forEach((i) => {
+  if (i) {
+      const observer = new IntersectionObserver((entries) => {
+          observerCallbackFadeOut(entries, observer, i)
+      },
+      {threshold: 0.01});    
+      observer.observe(i);
+  }
+});
+
+const observerCallbackFadeOut = (entries, observer, header) => {
+  entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('out-view');
+        } else {
+          entry.target.classList.add('out-view');
+        }
   });
 };
 
