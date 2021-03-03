@@ -2,13 +2,16 @@
 
 .site-nav {
     list-style: none;
-    float: right;
     background: $gum;
     width: 100%;
     height: 2.75rem;
     padding: 0;
-    margin-top: 2.75rem;
+    position: absolute;
+    top: 2.75rem;
+    margin-top: 0;
     @include bp('sm'){
+        position: static;
+        float: right;
         height: auto;
         width: auto;
         margin-right: 4rem;
@@ -24,8 +27,10 @@
     .site-nav__item {
         display: inline-block;
         width: 33.33%;
+        width: 50%;
         text-align: center;
         float: left;
+        padding-left: 0;
         @include bp('sm'){
             width: auto;
             margin-right: 1.5rem;
@@ -64,6 +69,10 @@
             @include bp('sm'){
                 line-height: 1;
                 font-size: 1.125rem;
+            }
+
+            &:after {
+                display: none;
             }
         }
 
@@ -108,10 +117,14 @@
 
         &.contact-item {
             a {
-                color: $coke;
+                @include bp('sm'){
+                    color: $coke;
+                }
 
                 &:before {
-                    background: $gum;
+                    @include bp('sm'){
+                        background: $gum;
+                    }
                 }
             }    
         }    

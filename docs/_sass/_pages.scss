@@ -13,12 +13,20 @@
     .site-nav__item {
         &.contact-item {
             a {
-                color: $coke;
+                @include bp('sm'){
+                    color: $coke;
+                }
     
                 &:after {
-                    background: $gum;
+                    @include bp('sm'){
+                        background: $gum;
+                    }
                 }
             }
         }
+    }
+
+    .section .teaser-content h2:before {
+        display: none;
     }
 }

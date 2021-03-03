@@ -9,6 +9,41 @@
             margin: 0.5rem 0 1.25rem;
         }
     }
+
+    &-meta {
+        border: 1px solid $gum;
+        padding: 0.75rem 1rem 0.5rem;
+        span {
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .article-header {
+        margin-top: 2rem;
+        @include bp('sm') {
+            margin-top: 10rem;
+        }
+    }
+
+    &.case {
+        .article-header {
+            margin-top: 0;
+        }
+    }
+
+    &.case-list {
+        .teaser--case {
+            margin-top: 6rem;
+            margin-bottom: 6rem;
+
+            & + .teaser--case {
+                margin-top: 0;
+            }
+            
+        }
+    }
 }
 
 .lead {
@@ -58,7 +93,7 @@
 .align-left {
     @include bp('sm') {
         float: left;
-        margin: 0.5rem 2rem 0.5rem 0;
+        margin: 0.5rem 3rem 1rem 0;
     }
 
     img {
@@ -71,11 +106,16 @@
 .align-right {
     @include bp('sm') {
         float: right;
-        margin: 0.5rem 0 0.5rem 2rem;
+        margin: 0.5rem 0 1rem 2rem;
     }
 
     &:before {
         right: auto;
         left: 1rem;
     }
+}
+
+.case-categories {
+    margin-top: 0;
+    margin-bottom: 2rem;
 }

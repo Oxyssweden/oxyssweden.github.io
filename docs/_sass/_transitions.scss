@@ -1,0 +1,12 @@
+.fadeup {
+    transform: translateY(50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+.in-view {
+    transform: none;
+    opacity: 1;
+}
