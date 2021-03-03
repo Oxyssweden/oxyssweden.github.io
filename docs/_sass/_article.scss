@@ -44,6 +44,33 @@
             
         }
     }
+
+    a:not(.button) {
+        display: inline-block;
+    
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -0.25rem;
+          left: 0;
+          right: 0;
+          height: 1rem;
+          background-position: bottom;
+          background-repeat: repeat-x;
+          background-size: auto 30%;
+          filter: brightness(1.32) sepia(1) hue-rotate(321deg) saturate(10);
+          opacity: 0;
+          transition: opacity .2s ease-in;
+        }
+        &:hover {
+          text-decoration: none;
+    
+          &:after {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+            opacity: 1;
+          }
+        }
+    }
 }
 
 .lead {

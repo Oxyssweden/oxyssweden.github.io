@@ -85,20 +85,30 @@ if(anchorTech) {
 }
 
 
+// FADE UP
+document.querySelectorAll('.fadeup').forEach((i) => {
+  if (i) {
+      const observer = new IntersectionObserver((entries) => {
+          observerCallback(entries, observer, i)
+      },
+      {threshold: 0.3});    
+      observer.observe(i);
+  }
+});
 
-var fadeUp = document.getElementsByClassName('fadeup');
-
-function handleIntersectionImages(entries) {
-  entries.map((entry) => {
-    if (entry.isIntersecting) {
-      entry.classList.add('in-view');
-    } else {
-      //
-    }
+const observerCallback = (entries, observer, header) => {
+  entries.forEach((entry, i) => {
+       if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+       }
   });
-}
-const fadeUpObserver = new IntersectionObserver(handleIntersectionImages);
-fadeUpObserver.observe(fadeUp);
+};
+
+
+
+
+
+
 
 
 

@@ -36,10 +36,10 @@
             margin-right: 1.5rem;
         }
         @include bp('md'){
-            margin-right: 2rem;
+            margin-right: 1.25rem;
         }
         @include bp('lg'){
-            margin-right: 3rem;
+            margin-right: 2.25rem;
         }
 
         &:last-child {
@@ -67,13 +67,12 @@
             font-size: 0.875rem;
             letter-spacing: 0.05rem;
             @include bp('sm'){
+                padding: 0.75rem;
                 line-height: 1;
                 font-size: 1.125rem;
             }
 
-            &:after {
-                display: none;
-            }
+        
         }
 
         &.contact-item {
@@ -104,29 +103,4 @@
             }
         }
     }
-}
-
-.frontpage {
-    .site-nav__item {
-        a {
-            color: $coke;
-            @include bp('sm'){
-                color: $gum;
-            }
-        }
-
-        &.contact-item {
-            a {
-                @include bp('sm'){
-                    color: $coke;
-                }
-
-                &:before {
-                    @include bp('sm'){
-                        background: $gum;
-                    }
-                }
-            }    
-        }    
-    } 
 }

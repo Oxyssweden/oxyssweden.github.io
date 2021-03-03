@@ -14,14 +14,29 @@
         &.contact-item {
             a {
                 @include bp('sm'){
-                    color: $coke;
+                    transition: all .3s;
+                    box-shadow:  0 0 0 0 $gum;
                 }
-    
-                &:after {
+
+                &:hover {
                     @include bp('sm'){
-                        background: $gum;
+                        background: transparent;
+                        color: $gum;
+                        box-shadow: 0 0 0 0.5rem $gum;
                     }
                 }
+
+                @include bp('sm'){
+                    color: $coke;
+                    background: $gum;   
+                }
+                
+            }
+        }
+
+        a {
+            @include bp('sm'){
+                color: $gum;
             }
         }
     }
