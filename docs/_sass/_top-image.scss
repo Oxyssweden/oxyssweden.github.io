@@ -3,11 +3,13 @@
     @include fluid( height, 16rem, 28rem, $xs, $xl);
     @include fluid( padding-bottom, 20rem, 28rem, $xs, $xl);
     @include fluid( margin-bottom, 1.5rem, 4rem, $xs, $xl);
+    margin-top: -2.75rem;
     
     width: 100vw;
     margin-left: -1.5rem;
     @include bp('sm') {
         margin-left: -2rem;
+        margin-top: 0;
     }
     @include bp('md') {
         margin-left: -3rem;
@@ -38,9 +40,9 @@
 
         img {
             position: absolute;
-            min-width: 100%;
+            width: 100%;
+            height: auto;
             min-height: 100%;
-            width: auto;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);

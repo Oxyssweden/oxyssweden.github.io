@@ -1,9 +1,9 @@
 .fadeup {
-    transform: translateY(30%);
     opacity: 0;
     transition-property: transform, opacity;
     transition-duration: .5s;
     transition-timing-function: ease-out;
+    transform: translateY(50%);
 }
 
 .in-view {

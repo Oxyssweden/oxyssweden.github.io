@@ -15,9 +15,6 @@ body {
     perspective-origin: 100%;
 }
 
-.page-wrapper {
-      
-}
 
 img {
     width: 100%;
@@ -39,3 +36,12 @@ img {
     }
 
 }
+
+svg {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

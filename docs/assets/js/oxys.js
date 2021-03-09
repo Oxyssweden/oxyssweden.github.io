@@ -91,7 +91,7 @@ document.querySelectorAll('.fadeup').forEach((i) => {
       const observer = new IntersectionObserver((entries) => {
           observerCallbackFadeUp(entries, observer, i)
       },
-      {threshold: 0.3});    
+      {threshold: 0.2});    
       observer.observe(i);
   }
 });
@@ -100,7 +100,11 @@ const observerCallbackFadeUp = (entries, observer, header) => {
   entries.forEach((entry, i) => {
        if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
+        entry.target.classList.remove('out-view');
+       } else {
+          entry.target.classList.add('out-view');
        }
+
   });
 };
 

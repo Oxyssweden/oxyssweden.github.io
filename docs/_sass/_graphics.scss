@@ -5,6 +5,7 @@
     height: auto;
     z-index: 1;
     margin-bottom: -0.25rem;
+    
 
     &:after {
         content: "";
@@ -18,7 +19,8 @@
 
     svg {
         float: left;
-        
+        left: 0;
+        transform: translateX(0);
     }
 }
 
