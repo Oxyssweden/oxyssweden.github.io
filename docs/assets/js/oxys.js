@@ -130,10 +130,15 @@ const observerCallbackFadeOut = (entries, observer, header) => {
 };
 
 
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2021 12:00:00 UTC";
 
 
+const CC = window.CookieConsent;
 
-
+const cc = new CC({
+  //...options,
+  type   : "categories"
+})
 
 
 
