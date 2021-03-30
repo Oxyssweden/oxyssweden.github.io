@@ -1,0 +1,153 @@
+<div id="cookie-notice">
+    <span>Click for settings, accept all, or get more info.</span>
+    <a id="cookie-notice-settings" class="btn btn-primary btn-sm">Settings</a>
+    <a id="cookie-notice-accept-all" class="btn btn-primary btn-sm">Accept all</a>
+    <a href="/privacy" class="btn btn-primary btn-sm">More info</a>
+</div>
+
+<div id="cookie-notice-popup">
+
+    <form id="cookie-notice-popup__form">
+
+        <label for="cookie-notice-accept-analytics">Approve Analytics</label><br>
+        <input type="checkbox" checked id="cookie-notice-accept-analytics" name="cookie-notice-accept-analytics"><br>
+
+        <label for="cookie-notice-accept-video">Approve Video</label><br>
+        <input type="checkbox" checked id="cookie-notice-accept-video" name="cookie-notice-accept-video"><br>
+
+        <input class="button" type="submit" value="Submit">
+
+    </form>
+
+    <a href="/privacy" class="button">More info</a>
+
+</div>
+
+<!-- Cookie revist button, to be shown after initial selection made -->
+<a id="cookie-notice-revisit" href="#" class="button">Cookies</div>
+
+<script>
+
+    //https://jekyllcodex.org/without-plugin/cookie-consent/
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+
+    }
+    function eraseCookie(name) {
+
+        createCookie(name,"",-1);
+    }
+
+    
+    let form = document.getElementById('cookie-notice-popup__form');
+    let cb = form.getElementsByTagName('input'); // get the inputs
+
+    //Handle form submit
+    form.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        for(let i=0; i<cb.length; i++){
+
+            if(cb[i].type=='checkbox' && !cb[i].checked){
+                
+                eraseCookie(cb[i].id);
+
+            }
+            else{
+
+                createCookie(cb[i].id, 'true', 31);
+            }
+        }
+
+        createCookie('cookie-notice-check','true',31); //Revisit cookie check
+        document.getElementById('cookie-notice').style.display = 'none';
+        document.getElementById('cookie-notice-popup').style.display = 'none';
+        location.reload();
+
+    })
+
+
+    if(readCookie('cookie-notice-check') == 'true') {
+
+        //Visited in the previous 31 days.
+
+        document.getElementById('cookie-notice-revisit').style.display = 'block';        
+
+        if(readCookie('cookie-notice-accept-analytics') == 'true') {
+
+            /* Load analytics */
+            console.log("Load analytics");
+
+            {% comment %}
+
+                {% include ga.js %}
+
+            {% endcomment %}
+            
+        }
+
+        if(readCookie('cookie-notice-accept-video') == 'true') {
+
+            /* Load 3rd party videos */
+            console.log("Load 3rd party videos");
+
+            //To Do: replace any iframes with placeholder until video cookies are accepted.
+            
+        }
+
+    } else {
+
+        document.getElementById('cookie-notice').style.display = 'block';
+
+    }
+
+    document.getElementById('cookie-notice-settings').addEventListener("click", function() {
+
+        document.getElementById('cookie-notice-popup').style.display = "flex";
+            
+    });
+
+    document.getElementById('cookie-notice-revisit').addEventListener("click", function() {
+
+        document.getElementById('cookie-notice-popup').style.display = "flex";
+            
+    });
+
+    document.getElementById('cookie-notice-accept-all').addEventListener("click", function() {
+
+        //Revisit cookie check
+        createCookie('cookie-notice-check','true',31);
+
+        //All accepted
+        for(let i=0; i<cb.length; i++){
+
+            if(cb[i].type=='checkbox'){// Find all checkboxes
+                
+                createCookie(cb[i].id, 'true', 31);
+
+            }
+        }
+
+        location.reload();
+
+    });
+
+</script>
