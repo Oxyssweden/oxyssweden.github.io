@@ -26,6 +26,9 @@
 <!-- Cookie revist button, to be shown after initial selection made -->
 <a id="cookie-notice-revisit" href="#" class="button">Cookies</div>
 
+
+<iframe data-src="https://www.oxys.se"></iframe>
+
 <script>
 
     //https://jekyllcodex.org/without-plugin/cookie-consent/
@@ -109,8 +112,16 @@
             /* Load 3rd party videos */
             console.log("Load 3rd party videos");
 
-            //To Do: replace any iframes with placeholder until video cookies are accepted.
-            
+            //When adding iframes, use data-src, not src.
+            let iframes = document.getElementsByTagName('iframe'); // get the iframes
+
+            for(let j=0; j<iframes.length; j++){
+
+                let iframeUrl = iframes[j].getAttribute('data-src');
+
+                iframes[j].setAttribute('src', iframeUrl);
+
+            }
         }
 
     } else {

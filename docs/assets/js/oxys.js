@@ -129,7 +129,7 @@ const observerCallbackFadeOut = (entries, observer, header) => {
   });
 };
 
-
+/*
 document.cookie = "username=John Doe; expires=Thu, 18 Dec 2021 12:00:00 UTC";
 
 
@@ -139,7 +139,7 @@ const cc = new CC({
   //...options,
   type   : "categories"
 })
-
+*/
 
 
 // const links = document.querySelectorAll(".page-categories__item a");
